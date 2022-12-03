@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cervejaria do Pericles Delivery - Produtos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>A Cervejaria</li>
+            <li>Nossas Cervejas</li>
+            <li>Delivery</li>
+            <li>Meu Carrinho <img src="./imagens/carrinho.png" alt="Carrinho" /></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <img src="./imagens/copos.png" alt="Copos de cerveja">
+        <p>Olá! Gostaria de te dar boas vindas à Cervejaria do Pericles. Escolha a bebida que mais te agrada:</p>
+    </div>
+
+    <form action="compra.html">
+        <ul class="lista_produtos">
+            <li id="vinho">
+                <img src="./imagens/vinho.png" alt="Vinho Tinto">
+                <p>Vinho Tinto</p>
+                <p>R$ 80,00</p>
+                <button type="submit" name="valor" value="80">Comprar</button>
+            </li>
+            <li id="heineken">
+                <img src="./imagens/heineken.png" alt="Cerveja Heineken">
+                <p>Cerveja Heineken</p>
+                <p>R$ 20,00</p>
+                <button type="submit" name="valor" value="20">Comprar</button>
+            </li>
+            <li id="guarana">
+                <img src="./imagens/guarana.png" alt="Refrigerante Guaraná">
+                <p>Refrigerante Guaraná</p>
+                <p>R$ 10,00</p>
+                <button type="submit" name="valor" value="10">Comprar</button>
+            </li>
+        </ul>
+    </form>
+
+    <script>
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+        let maior = urlParams.get('maior');
+
+        if (maior == 'nao') {
+            document.getElementById('vinho').style.display = 'none';
+            document.getElementById('heineken').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
